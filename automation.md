@@ -5,28 +5,37 @@ Operation Automation for ALTO
 
 Best practice documentation and extension of ALTO for operation automation.
 Operating an ALTO server can be complex, and the automation of the operations
-of the ALTO services can be highly valuable. The operations of an ALTO server
-includes decisions on the set of information resources (e.g., what metrics,
-how they are divided into multiple entries) exposed in the information
-resource directory (IRD), population (may be proactive and reactive) of the
-content of the services (e.g., pull the backend, or trigger just-in-time
-measurements), and aggregation/processing of the collected information to
-give clients the proper response. Because of the dynamicity of network states
-and application demands, the automation of the ALTO server operations
-requires more inputs from applications. The working group will (1)
-investigate the best practices in ALTO operations automation, including
-interop/interfaces/protocols with routing systems and measurement tools; (2)
-propose the new protocol extension for more application-aware information to
-enable reactive measurement and computation.
+of the ALTO services can be highly valuable. Although the working group has
+proposed a best practice document (i.e., RFC7971) to talk about deployment
+considerations including the operation automation, newer ALTO protocol
+extensions (e.g., the incremental update mechanism, cost calendar, unified
+properties, and path vector) and newer use cases (e.g., ZSM closed-loop
+automation, mobile edge computing) require additional considerations
+including but not limited to decisions on the set of information resources
+(e.g., what metrics, how they are divided into multiple entries) exposed in
+the information resource directory (IRD), population (may be proactive and
+reactive) of the content of the services (e.g., pull the backend, or trigger
+just-in-time measurements), and aggregation/processing of the collected
+information to give clients the proper response. Furthermore, newer ALTO
+services may populate the response dynamically and reactively, that requests
+more communications with applications to better predict/decide which
+low-level information (e.g., INT) should be collected/measured, and which
+intermediate information (e.g., end-to-end path cache) should be precomputed.
+The working group will (1) investigate the best practices in ALTO operations
+automation to support newer ALTO protocol extensions and use cases; (2)
+propose a new protocol extension to allow applications to subscribe demands
+including interested flows and related resources.
 
 ## Basic Issue
 
-- New complexity of operations
+- Complexity of operations on new extensions and new use cases
   - Practical operations of an ALTO server includes the complex workflow
-  - New ALTO protocol extensions (e.g., the incremental update mechanism, cost
-    calendar, unified properties, and path vector) introduce more complexity to
-    operations
-- Inefficient measurement and computation
+  - New ALTO protocol extensions (e.g., the incremental update mechanism,
+    cost calendar, unified properties, and path vector) require new
+    architectural and deployment considerations
+  - New use cases (e.g., ZSM closed-loop automation, mobile edge computing)
+    require new operation integrations with different systems
+- Reactive measurement and computation
   - ALTO information resource may be populated reactively, which requests
     more communications with applications to predict/decide which low-level
     information (e.g., INT) should be collected/measured, and which intermediate
@@ -41,11 +50,12 @@ enable reactive measurement and computation.
   - Reactive ALTO information resources update
   - Aggregation of different information sources
   - Considerations about intermediate abstraction (e.g., history, path cache)
-- Define the new interface (service) between application and server to allow
-  the application to subscribe demand and enable reactive measurement and
+- Define a new interface (service) between the application and server to allow
+  the application to subscribe demands and enable reactive measurement and
   computation:
-  - interested E2E flows
-  - constraints for flows
+  - Interested E2E flows
+  - Constraints for flows
+  - Potential metrics
 
 ## Remaining issues to be addressed
 
@@ -67,5 +77,5 @@ enable reactive measurement and computation.
 ## Potential milestones (1-2 years)
 
 - IETF 109: problem statement
-- IETF 110: initial draft for protocol extension
+- IETF 110: initial draft for the protocol extension
 - IETF 112: best practice documentation
