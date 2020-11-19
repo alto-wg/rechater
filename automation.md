@@ -3,28 +3,23 @@ Operation Automation for ALTO
 
 ## Proposed paragraph
 
-Best practice documentation and extension of ALTO for operation automation.
-Operating an ALTO server can be complex, and the automation of the operations
-of the ALTO services can be highly valuable. Although the working group has
-proposed a best practice document (i.e., RFC7971) to talk about deployment
-considerations including the operation automation, newer ALTO protocol
-extensions (e.g., the incremental update mechanism, cost calendar, unified
-properties, and path vector) and newer use cases (e.g., ZSM closed-loop
-automation, mobile edge computing) require additional considerations
-including but not limited to decisions on the set of information resources
-(e.g., what metrics, how they are divided into multiple entries) exposed in
-the information resource directory (IRD), population (may be proactive and
-reactive) of the content of the services (e.g., pull the backend, or trigger
-just-in-time measurements), and aggregation/processing of the collected
-information to give clients the proper response. Furthermore, newer ALTO
-services may populate the response dynamically and reactively, that requests
-more communications with applications to better predict/decide which
-low-level information (e.g., INT) should be collected/measured, and which
-intermediate information (e.g., end-to-end path cache) should be precomputed.
+Documentation of best practices and extension of ALTO for facilitating
+operational automation tasks. Although the working group has proposed a best
+practice document (i.e., RFC7971) about deployment considerations, newer ALTO
+protocol extensions (e.g., the incremental update mechanism, cost calendar,
+unified properties, and path vector) and newer use cases (e.g., ZSM
+closed-loop automation, mobile edge computing) require additional
+considerations. Those include, e.g., decisions on information resources
+exposed in the information resource directory (IRD), notification of changes
+either in proactive or reactive mode, or aggregation/processing of the
+collected information according to the clients’ requests, for mentioning just
+a few. Furthermore, newer ALTO services may require more interaction with
+applications to better predict/decide which low-level information should be
+collected/measured, and which aggregated information should be precomputed.
 The working group will (1) investigate the best practices in ALTO operations
-automation to support newer ALTO protocol extensions and use cases; (2)
-propose a new protocol extension to allow applications to subscribe demands
-including interested flows and related resources.
+automation, including the support of newer ALTO protocol extensions and use
+cases; (2) propose new protocol extensions to allow applications to better
+express needs about interested flows and related resources.
 
 ## Basic Issue
 
@@ -55,7 +50,7 @@ including interested flows and related resources.
   computation:
   - Interested E2E flows
   - Constraints for flows
-  - Potential metrics
+  - Interested (computing) resources
 
 ## Remaining issues to be addressed
 
